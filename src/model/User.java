@@ -93,6 +93,11 @@ public class User {
     public void setPhoto(Icon photo) {
         this.photo = photo;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
     
 
 }
