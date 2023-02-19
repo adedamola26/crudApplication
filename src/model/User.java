@@ -13,7 +13,9 @@ import javax.swing.Icon;
 public class User {
     
     String name;
-    String id;
+//    String id;
+    static int id = 1;
+    int empId;
     String age;
     String gender;
     String date;
@@ -30,14 +32,34 @@ public class User {
         this.name = name;
     }
 
-    public String getId() {
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
+    
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId() {
+        this.id ++;
     }
 
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId() {
+        this.empId = id;
+        setId();
+    }
+    public void setEmpId(int num) {
+        this.empId = num;
+    }
+    
     public String getAge() {
         return age;
     }

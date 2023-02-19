@@ -28,16 +28,6 @@
                               <Component id="nameField" min="-2" pref="154" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="idLabel" min="-2" pref="123" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Component id="idField" min="-2" pref="154" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="ageLabel" min="-2" pref="123" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Component id="ageField" min="-2" pref="154" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
                               <Component id="genderLabel" min="-2" pref="123" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Component id="genderField" min="-2" pref="154" max="-2" attributes="0"/>
@@ -61,6 +51,17 @@
                               <Component id="emailLabel" min="-2" pref="123" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Component id="emailField" min="-2" pref="154" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ageLabel" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <Component id="idLabel" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="57" pref="57" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="ageField" pref="154" max="32767" attributes="0"/>
+                                  <Component id="autoLabel" pref="154" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -96,11 +97,11 @@
                           <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="idLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="idField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="idLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="autoLabel" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ageLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ageField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -140,7 +141,7 @@
                       <Component id="photoButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="176" max="32767" attributes="0"/>
+              <EmptySpace pref="182" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -157,8 +158,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nameField">
-    </Component>
-    <Component class="javax.swing.JTextField" name="idField">
     </Component>
     <Component class="javax.swing.JLabel" name="idLabel">
       <Properties>
@@ -227,6 +226,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="photoButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="autoLabel">
     </Component>
   </SubComponents>
 </Form>

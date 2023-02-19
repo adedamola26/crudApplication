@@ -30,6 +30,7 @@ public class ViewPanel extends javax.swing.JPanel {
     JFrame mainFrame;
     UserDirectory allUsers;
     JPanel aPanel;
+    ImageIcon defaultIcon;
 
     public ViewPanel(JFrame mainFrame, JPanel aPanel, UserDirectory allUsers) {
         initComponents();
@@ -37,6 +38,17 @@ public class ViewPanel extends javax.swing.JPanel {
         this.aPanel = aPanel;
         this.allUsers = allUsers;
         populateTable();
+        String path = "C:\\Users\\adeda\\OneDrive\\Desktop\\placeholder2.png";
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(new File(path));
+
+        } catch (IOException error) {
+        }
+        Image scaledImage = image.getScaledInstance(244,
+                226, Image.SCALE_SMOOTH);
+        defaultIcon = new ImageIcon(scaledImage);
+        photoLabel.setIcon(defaultIcon);
     }
 
     /**
@@ -65,13 +77,13 @@ public class ViewPanel extends javax.swing.JPanel {
         levelLabel = new javax.swing.JLabel();
         nameField = new javax.swing.JTextField();
         cellNumLabel = new javax.swing.JLabel();
-        idField = new javax.swing.JTextField();
         cellNumField = new javax.swing.JTextField();
         idLabel = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         updateButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         viewButton = new javax.swing.JButton();
+        autoLabel = new javax.swing.JLabel();
 
         titleLabel.setText("Employee Details");
 
@@ -111,7 +123,7 @@ public class ViewPanel extends javax.swing.JPanel {
 
         dateLabel.setText("Start Date");
 
-        photoButton.setText("Upload Photo");
+        photoButton.setText("Change Photo");
         photoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 photoButtonActionPerformed(evt);
@@ -136,6 +148,11 @@ public class ViewPanel extends javax.swing.JPanel {
         });
 
         deleteButton.setText("DELETE");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
 
         viewButton.setText("VIEW");
         viewButton.addActionListener(new java.awt.event.ActionListener() {
@@ -159,40 +176,41 @@ public class ViewPanel extends javax.swing.JPanel {
                 .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(updateButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
                         .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(genderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
                         .addComponent(genderField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
                         .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(levelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
                         .addComponent(levelField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(cellNumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
                         .addComponent(cellNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
-                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(autoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(ageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(57, 57, 57)
+                            .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
@@ -219,17 +237,19 @@ public class ViewPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteButton)
                     .addComponent(viewButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nameLabel)
                             .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(idLabel)
-                            .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(autoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(idLabel)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ageLabel)
                             .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -266,47 +286,53 @@ public class ViewPanel extends javax.swing.JPanel {
 
     private void photoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_photoButtonActionPerformed
         // TODO add your handling code here:
+        int selectedIndex = empTable.getSelectedRow();
+        if (selectedIndex < 0) {
+            JOptionPane.showMessageDialog(mainFrame, "Please select employee to change photo", "Error", HEIGHT);
+        } else {
 
-        FileDialog dialog = new FileDialog(mainFrame, "Select Photo", FileDialog.LOAD);
-        dialog.setVisible(true);
-        // Save file's path
-        String filePath = (dialog.getDirectory() + dialog.getFile());
+            FileDialog dialog = new FileDialog(mainFrame, "Select Photo", FileDialog.LOAD);
+            dialog.setVisible(true);
+            // Save file's path
+            String filePath = (dialog.getDirectory() + dialog.getFile());
 
-        // create image object
-        BufferedImage image = null;
-        try {
-            image = ImageIO.read(new File(filePath));
-        } catch (IOException error) {
-        }
+            // create image object
+            BufferedImage image = null;
+            try {
+                image = ImageIO.read(new File(filePath));
+            } catch (IOException error) {
+            }
 
-        // Set image dimension to be equal to dimension of label it will fit in
-        Image scaledImage = image.getScaledInstance(photoLabel.getWidth(),
-                photoLabel.getHeight(), Image.SCALE_SMOOTH);
+            // Set image dimension to be equal to dimension of label it will fit in
+            Image scaledImage = image.getScaledInstance(photoLabel.getWidth(),
+                    photoLabel.getHeight(), Image.SCALE_SMOOTH);
 
-        // Make image an ImageIcon object for JLabel to accept it
-        ImageIcon imageIcon = new ImageIcon(scaledImage);
-        photoLabel.setIcon(imageIcon);
+            // Make image an ImageIcon object for JLabel to accept it
+            ImageIcon imageIcon = new ImageIcon(scaledImage);
+            photoLabel.setIcon(imageIcon);
     }//GEN-LAST:event_photoButtonActionPerformed
-
+    }
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
-//        try {
-//            User inputUser = new User();
-//            inputUser.setName(nameField.getText());
-//            inputUser.setId(idField.getText());
-//            inputUser.setAge(ageField.getText());
-//            inputUser.setGender(genderField.getText());
-//            inputUser.setDate(dateField.getText());
-//            inputUser.setLevel(levelField.getText());
-//            inputUser.setCellNum(cellNumField.getText());
-//            inputUser.setEmail(emailField.getText());
-//            inputUser.setPhoto(photoLabel.getIcon());
-//            allUsers.addUser(inputUser);
-//            JOptionPane.showMessageDialog(aPanel, "User saved successfully.", "Success", HEIGHT);
-//            //            System.out.println(allUsers);
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(aPanel, "Please provide complete and correct employee details.", "Error", HEIGHT);
-//        }
+        int selectedIndex = empTable.getSelectedRow();
+        if (selectedIndex < 0) {
+            JOptionPane.showMessageDialog(mainFrame, "Please select employee to view.", "Error", HEIGHT);
+        } else {
+            User selectedUser = (User) empTable.getValueAt(selectedIndex, 0);
+            selectedUser.setName(nameField.getText());
+//            selectedUser.setId(idField.getText());
+            selectedUser.setEmpId(selectedUser.getEmpId());
+
+            selectedUser.setAge(ageField.getText());
+            selectedUser.setGender(genderField.getText());
+            selectedUser.setDate(dateField.getText());
+            selectedUser.setLevel(levelField.getText());
+            selectedUser.setCellNum(cellNumField.getText());
+            selectedUser.setEmail(emailField.getText());
+            selectedUser.setPhoto(photoLabel.getIcon());
+            JOptionPane.showMessageDialog(aPanel, "Employee details updated successfully.", "Success", HEIGHT);
+            populateTable();
+        }
     }//GEN-LAST:event_updateButtonActionPerformed
 
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
@@ -315,22 +341,39 @@ public class ViewPanel extends javax.swing.JPanel {
         if (selectedIndex < 0) {
             JOptionPane.showMessageDialog(mainFrame, "Please select employee to view.", "Error", HEIGHT);
         } else {
-
-            nameField.setText("");
-            idField.setText("");
-            ageField.setText("");
-            genderField.setText("");
-            dateField.setText("");
-            levelField.setText("");
-            cellNumField.setText("");
-            emailField.setText("");
+            User selectedUser = (User) empTable.getValueAt(selectedIndex, 0);
+            nameField.setText(selectedUser.getName());
+//            idField.setText(selectedUser.getId());
+            autoLabel.setText(String.valueOf(selectedUser.getEmpId()));
+            ageField.setText(selectedUser.getAge());
+            genderField.setText(selectedUser.getGender());
+            dateField.setText(selectedUser.getDate());
+            levelField.setText(selectedUser.getLevel());
+            cellNumField.setText(selectedUser.getCellNum());
+            emailField.setText(selectedUser.getEmail());
+            photoLabel.setIcon(selectedUser.getPhoto());
         }
     }//GEN-LAST:event_viewButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedIndex = empTable.getSelectedRow();
+        if (selectedIndex < 0) {
+            JOptionPane.showMessageDialog(mainFrame, "Please select employee to delete.", "Error", HEIGHT);
+        } else {
+            User selectedUser = (User) empTable.getValueAt(selectedIndex, 0);
+            allUsers.removeUser(selectedUser);
+            JOptionPane.showMessageDialog(mainFrame, selectedUser + " deleted successfully.", "Success", HEIGHT);
+
+            populateTable();
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageField;
     private javax.swing.JLabel ageLabel;
+    private javax.swing.JLabel autoLabel;
     private javax.swing.JTextField cellNumField;
     private javax.swing.JLabel cellNumLabel;
     private javax.swing.JTextField dateField;
@@ -341,7 +384,6 @@ public class ViewPanel extends javax.swing.JPanel {
     private javax.swing.JTable empTable;
     private javax.swing.JTextField genderField;
     private javax.swing.JLabel genderLabel;
-    private javax.swing.JTextField idField;
     private javax.swing.JLabel idLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField levelField;
@@ -361,7 +403,7 @@ public class ViewPanel extends javax.swing.JPanel {
         for (User u : allUsers.getAllUsers()) {
             Object[] rows = new Object[8];
             rows[0] = u;
-            rows[1] = u.getId();
+            rows[1] = u.getEmpId();
             rows[2] = u.getAge();
             rows[3] = u.getGender();
             rows[4] = u.getDate();
@@ -375,12 +417,13 @@ public class ViewPanel extends javax.swing.JPanel {
 
     private void clearFields() {
         nameField.setText("");
-        idField.setText("");
+        autoLabel.setText("N/A");
         ageField.setText("");
         genderField.setText("");
         dateField.setText("");
         levelField.setText("");
         cellNumField.setText("");
         emailField.setText("");
+        photoLabel.setIcon(defaultIcon);
     }
 }
