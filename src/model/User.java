@@ -5,6 +5,7 @@
 package model;
 
 import javax.swing.Icon;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,12 +14,11 @@ import javax.swing.Icon;
 public class User {
     
     String name;
-//    String id;
+    LocalDate dt;
     static int id = 1;
     int empId;
     String age;
     String gender;
-    String date;
     String level;
     String cellNum;
     String email;
@@ -32,13 +32,13 @@ public class User {
         this.name = name;
     }
 
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
+    public LocalDate getDt() {
+        return dt;
+    }
+
+    public void setdt(LocalDate dt) {
+        this.dt = dt;
+    }
     
     public int getId() {
         return id;
@@ -54,7 +54,7 @@ public class User {
 
     public void setEmpId() {
         this.empId = id;
-        setId();
+//        setId();
     }
     public void setEmpId(int num) {
         this.empId = num;
@@ -74,14 +74,6 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getLevel() {

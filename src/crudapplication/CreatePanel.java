@@ -6,10 +6,13 @@ package crudapplication;
 
 import java.awt.FileDialog;
 import java.awt.Image;
+import static java.awt.event.KeyEvent.VK_BACK_SPACE;
+import static java.awt.event.KeyEvent.VK_DELETE;
 import java.awt.image.BufferedImage;
 import static java.awt.image.ImageObserver.HEIGHT;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -69,11 +72,8 @@ public class CreatePanel extends javax.swing.JPanel {
         idLabel = new javax.swing.JLabel();
         ageLabel = new javax.swing.JLabel();
         ageField = new javax.swing.JTextField();
-        genderField = new javax.swing.JTextField();
         genderLabel = new javax.swing.JLabel();
-        dateField = new javax.swing.JTextField();
         dateLabel = new javax.swing.JLabel();
-        levelField = new javax.swing.JTextField();
         levelLabel = new javax.swing.JLabel();
         cellNumLabel = new javax.swing.JLabel();
         cellNumField = new javax.swing.JTextField();
@@ -83,14 +83,32 @@ public class CreatePanel extends javax.swing.JPanel {
         saveButton = new javax.swing.JButton();
         photoButton = new javax.swing.JButton();
         autoLabel = new javax.swing.JLabel();
+        genderBox = new javax.swing.JComboBox<>();
+        dayField = new javax.swing.JTextField();
+        monthField = new javax.swing.JTextField();
+        yearField = new javax.swing.JTextField();
+        errorLabel = new javax.swing.JLabel();
+        levelBox = new javax.swing.JComboBox<>();
 
         titleLabel.setText("Enter Employee Details");
 
         nameLabel.setText("Name");
 
+        nameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nameFieldKeyPressed(evt);
+            }
+        });
+
         idLabel.setText("Employee ID");
 
         ageLabel.setText("Age");
+
+        ageField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ageFieldKeyPressed(evt);
+            }
+        });
 
         genderLabel.setText("Gender");
 
@@ -99,6 +117,12 @@ public class CreatePanel extends javax.swing.JPanel {
         levelLabel.setText("Level");
 
         cellNumLabel.setText("Cell Phone Number");
+
+        cellNumField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cellNumFieldKeyPressed(evt);
+            }
+        });
 
         emailLabel.setText("Email address");
 
@@ -118,59 +142,123 @@ public class CreatePanel extends javax.swing.JPanel {
             }
         });
 
+        autoLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
+        genderBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+
+        dayField.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        dayField.setForeground(new java.awt.Color(153, 153, 153));
+        dayField.setText("DD");
+        dayField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dayFieldMouseClicked(evt);
+            }
+        });
+        dayField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                dayFieldKeyPressed(evt);
+            }
+        });
+
+        monthField.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        monthField.setForeground(new java.awt.Color(153, 153, 153));
+        monthField.setText("MM");
+        monthField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                monthFieldMouseClicked(evt);
+            }
+        });
+        monthField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monthFieldActionPerformed(evt);
+            }
+        });
+        monthField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                monthFieldKeyPressed(evt);
+            }
+        });
+
+        yearField.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        yearField.setForeground(new java.awt.Color(153, 153, 153));
+        yearField.setText("YYYY"); // NOI18N
+        yearField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                yearFieldMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                yearFieldMouseExited(evt);
+            }
+        });
+        yearField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yearFieldActionPerformed(evt);
+            }
+        });
+        yearField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                yearFieldKeyPressed(evt);
+            }
+        });
+
+        levelBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Junior", "Senior" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(86, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ageLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(genderLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ageField, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(autoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(genderBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(yearField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(monthField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dayField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14))))
+                    .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cellNumLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(levelLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(levelBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cellNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(genderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(genderField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(levelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(levelField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cellNumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(cellNumField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ageLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(idLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(57, 57, 57)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(ageField, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                                    .addComponent(autoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(105, 105, 105)
-                                .addComponent(photoButton))))
+                        .addGap(49, 49, 49)
+                        .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(105, 105, 105)
+                        .addComponent(photoButton)))
                 .addGap(22, 22, 22))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(221, 221, 221)
+                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,8 +266,15 @@ public class CreatePanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(photoButton))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(108, 108, 108)
+                        .addGap(52, 52, 52)
+                        .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nameLabel)
                             .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -194,15 +289,17 @@ public class CreatePanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(genderLabel)
-                            .addComponent(genderField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(genderBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(dateLabel)
-                            .addComponent(dateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(monthField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(yearField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dayField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(levelLabel)
-                            .addComponent(levelField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(levelBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cellNumLabel)
@@ -212,12 +309,7 @@ public class CreatePanel extends javax.swing.JPanel {
                             .addComponent(emailLabel)
                             .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(68, 68, 68)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(photoButton)))
+                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(182, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -226,19 +318,21 @@ public class CreatePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             User inputUser = new User();
+            String date = yearField.getText() + "-" + monthField.getText() + "-" + dayField.getText();
             inputUser.setName(nameField.getText());
 //            inputUser.setId(idField.getText());
             inputUser.setEmpId();
-
-            inputUser.setAge(ageField.getText());
-            inputUser.setGender(genderField.getText());
-            inputUser.setDate(dateField.getText());
-            inputUser.setLevel(levelField.getText());
+//            inputUser.setAge(ageField.getText());
+            inputUser.setdt(LocalDate.parse(date));
+            inputUser.setGender(String.valueOf(genderBox.getSelectedItem()));
+//            inputUser.setDate(dateField.getText());
+            inputUser.setLevel(String.valueOf(levelBox.getSelectedItem()));
             inputUser.setCellNum(cellNumField.getText());
             inputUser.setEmail(emailField.getText());
             inputUser.setPhoto(photoLabel.getIcon());
             allUsers.addUser(inputUser);
             JOptionPane.showMessageDialog(aPanel, "User saved successfully.", "Success", HEIGHT);
+            inputUser.setId();
             clearFields();
 //            System.out.println(allUsers);
         } catch (Exception e) {
@@ -271,6 +365,129 @@ public class CreatePanel extends javax.swing.JPanel {
         photoLabel.setIcon(imageIcon);
     }//GEN-LAST:event_photoButtonActionPerformed
 
+    private void yearFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yearFieldActionPerformed
+
+    private void monthFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_monthFieldActionPerformed
+
+    private void yearFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_yearFieldMouseClicked
+        // TODO add your handling code here:
+        if (yearField.getText().equals("YYYY")) {
+            yearField.setText("");
+        }
+    }//GEN-LAST:event_yearFieldMouseClicked
+
+    private void yearFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_yearFieldMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yearFieldMouseExited
+
+    private void monthFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_monthFieldMouseClicked
+        // TODO add your handling code here:
+        if (monthField.getText().equals("MM")) {
+            monthField.setText("");
+        }
+    }//GEN-LAST:event_monthFieldMouseClicked
+
+    private void dayFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dayFieldMouseClicked
+        // TODO add your handling code here:
+        if (dayField.getText().equals("DD")) {
+            dayField.setText("");
+        }
+    }//GEN-LAST:event_dayFieldMouseClicked
+
+    private void nameFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameFieldKeyPressed
+        // TODO add your handling code here:
+
+        char c = evt.getKeyChar();
+        if ((!Character.isLetter(c)) && (!Character.isWhitespace(c)) && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+            nameField.setEditable(false);
+            errorLabel.setText("Please enter letters only.");
+        } else {
+            nameField.setEditable(true);
+        }
+    }//GEN-LAST:event_nameFieldKeyPressed
+
+    private void ageFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageFieldKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+            ageField.setEditable(false);
+            errorLabel.setText("Please enter numbers only.");
+        } else {
+            ageField.setEditable(true);
+        }
+    }//GEN-LAST:event_ageFieldKeyPressed
+
+    private void yearFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_yearFieldKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (yearField.getText().length() == 4 && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+            yearField.setEditable(false);
+            errorLabel.setText("Please enter only 4 digits");
+        } else {
+            if ((!Character.isDigit(c)) && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+                yearField.setEditable(false);
+                errorLabel.setText("Please enter numbers only.");
+            } else {
+                yearField.setEditable(true);
+            }
+
+        }
+    }//GEN-LAST:event_yearFieldKeyPressed
+
+    private void cellNumFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cellNumFieldKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (cellNumField.getText().length() == 10 && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+            cellNumField.setEditable(false);
+            errorLabel.setText("Please enter only 10 digits");
+        } else {
+            if ((!Character.isDigit(c)) && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+                cellNumField.setEditable(false);
+                errorLabel.setText("Please enter numbers only.");
+            } else {
+                cellNumField.setEditable(true);
+            }
+        }
+    }//GEN-LAST:event_cellNumFieldKeyPressed
+
+    private void monthFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_monthFieldKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (monthField.getText().length() == 2 && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+            monthField.setEditable(false);
+            errorLabel.setText("Please enter only 2 digits");
+        } else {
+            if ((!Character.isDigit(c)) && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+                monthField.setEditable(false);
+                errorLabel.setText("Please enter numbers only.");
+            } else {
+                monthField.setEditable(true);
+            }
+
+        }
+    }//GEN-LAST:event_monthFieldKeyPressed
+
+    private void dayFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dayFieldKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (dayField.getText().length() == 2 && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+            dayField.setEditable(false);
+            errorLabel.setText("Please enter only 2 digits");
+        } else {
+            if ((!Character.isDigit(c)) && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+                dayField.setEditable(false);
+                errorLabel.setText("Please enter numbers only.");
+            } else {
+                dayField.setEditable(true);
+            }
+
+        }
+    }//GEN-LAST:event_dayFieldKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageField;
@@ -278,21 +495,24 @@ public class CreatePanel extends javax.swing.JPanel {
     private javax.swing.JLabel autoLabel;
     private javax.swing.JTextField cellNumField;
     private javax.swing.JLabel cellNumLabel;
-    private javax.swing.JTextField dateField;
     private javax.swing.JLabel dateLabel;
+    private javax.swing.JTextField dayField;
     private javax.swing.JTextField emailField;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JTextField genderField;
+    private javax.swing.JLabel errorLabel;
+    private javax.swing.JComboBox<String> genderBox;
     private javax.swing.JLabel genderLabel;
     private javax.swing.JLabel idLabel;
-    private javax.swing.JTextField levelField;
+    private javax.swing.JComboBox<String> levelBox;
     private javax.swing.JLabel levelLabel;
+    private javax.swing.JTextField monthField;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JButton photoButton;
     private javax.swing.JLabel photoLabel;
     private javax.swing.JButton saveButton;
     private javax.swing.JLabel titleLabel;
+    private javax.swing.JTextField yearField;
     // End of variables declaration//GEN-END:variables
 
     private void clearFields() {
@@ -300,12 +520,12 @@ public class CreatePanel extends javax.swing.JPanel {
 //        idField.setText("");
         autoLabel.setText(String.valueOf(fUser.getId()));
         ageField.setText("");
-        genderField.setText("");
-        dateField.setText("");
-        levelField.setText("");
+//        dateField.setText("");
+//        levelField.setText("");
         cellNumField.setText("");
         emailField.setText("");
         photoLabel.setIcon(imageIcon);
 
     }
+
 }
