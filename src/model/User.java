@@ -17,10 +17,10 @@ public class User {
     LocalDate dt;
     static int id = 1;
     int empId;
-    String age;
+    int age;
     String gender;
     String level;
-    String cellNum;
+    Long cellNum;
     String email;
     Icon photo;
 
@@ -60,11 +60,11 @@ public class User {
         this.empId = num;
     }
     
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -84,11 +84,11 @@ public class User {
         this.level = level;
     }
 
-    public String getCellNum() {
+    public Long getCellNum() {
         return cellNum;
     }
 
-    public void setCellNum(String cellNum) {
+    public void setCellNum(Long cellNum) {
         this.cellNum = cellNum;
     }
 
