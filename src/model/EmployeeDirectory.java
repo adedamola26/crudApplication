@@ -10,11 +10,11 @@ import java.util.ArrayList;
  *
  * @author adeda
  */
-public class UserDirectory {
+public class EmployeeDirectory {
     
-    ArrayList<User> allUsers;
+    private ArrayList<User> allUsers;
 
-    public UserDirectory() {
+    public EmployeeDirectory() {
         this.allUsers = new ArrayList<>();
     }
 
@@ -33,10 +33,8 @@ public class UserDirectory {
         this.allUsers.remove(aUser);
     }
 
-    @Override
-    public String toString() {
-        return "UserDirectory{" + "allUsers=" + allUsers + '}';
-    }
-    
-    
+//    @Override
+//    public String toString() {
+//        return "UserDirectory{" + "allUsers=" + allUsers + '}';
+//    }
 }

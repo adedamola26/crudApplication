@@ -4,8 +4,8 @@
  */
 package model;
 
-import javax.swing.Icon;
 import java.time.LocalDate;
+import javax.swing.Icon;
 
 /**
  *
@@ -13,16 +13,15 @@ import java.time.LocalDate;
  */
 public class User {
     
-    String name;
-    LocalDate dt;
-    static int id = 1;
-    int empId;
-    int age;
-    String gender;
-    String level;
-    Long cellNum;
-    String email;
-    Icon photo;
+    private String name;
+    private LocalDate startDate;
+    private static int idCounter = 1;
+    private int empId;
+    private int age;
+    private String gender;
+    private String level;
+    private Long cellNum;
+    private String email;
 
     public String getName() {
         return name;
@@ -32,20 +31,20 @@ public class User {
         this.name = name;
     }
 
-    public LocalDate getDt() {
-        return dt;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setdt(LocalDate dt) {
-        this.dt = dt;
-    }
-    
-    public int getId() {
-        return id;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
-    public void setId() {
-        this.id ++;
+    public int getIdCounter() {
+        return idCounter;
+    }
+
+    public void increaseIdCounter() {
+        this.idCounter ++;
     }
 
     public int getEmpId() {
@@ -53,13 +52,13 @@ public class User {
     }
 
     public void setEmpId() {
-        this.empId = id;
-//        setId();
-    }
-    public void setEmpId(int num) {
-        this.empId = num;
+        this.empId = idCounter;
     }
     
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
     public int getAge() {
         return age;
     }
@@ -107,11 +106,10 @@ public class User {
     public void setPhoto(Icon photo) {
         this.photo = photo;
     }
-
+    Icon photo;
+    
     @Override
     public String toString() {
-        return name;
+        return String.valueOf(empId);
     }
-    
-
 }
