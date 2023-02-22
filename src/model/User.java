@@ -13,6 +13,7 @@ import javax.swing.Icon;
  */
 public class User {
     
+<<<<<<< HEAD
     private String name;
     private LocalDate startDate;
     private static int idCounter = 1;
@@ -22,6 +23,18 @@ public class User {
     private String level;
     private Long cellNum;
     private String email;
+=======
+    String name;
+    LocalDate dt;
+    static int id = 1;
+    int empId;
+    String age;
+    String gender;
+    String level;
+    String cellNum;
+    String email;
+    Icon photo;
+>>>>>>> parent of 095a335 (tidying)
 
     public String getName() {
         return name;
@@ -55,15 +68,19 @@ public class User {
         this.empId = idCounter;
     }
     
+<<<<<<< HEAD
     public void setEmpId(int empId) {
         this.empId = empId;
     }
 
     public int getAge() {
+=======
+    public String getAge() {
+>>>>>>> parent of 095a335 (tidying)
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -83,11 +100,11 @@ public class User {
         this.level = level;
     }
 
-    public Long getCellNum() {
+    public String getCellNum() {
         return cellNum;
     }
 
-    public void setCellNum(Long cellNum) {
+    public void setCellNum(String cellNum) {
         this.cellNum = cellNum;
     }
 

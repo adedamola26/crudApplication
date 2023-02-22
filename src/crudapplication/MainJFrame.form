@@ -23,20 +23,28 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="splitPane" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+=======
+          <Component id="splitPane" alignment="0" max="32767" attributes="0"/>
+>>>>>>> parent of 095a335 (tidying)
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="splitPane" pref="708" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+=======
+          <Component id="splitPane" alignment="0" max="32767" attributes="0"/>
+>>>>>>> parent of 095a335 (tidying)
       </Group>
     </DimensionLayout>
   </Layout>
@@ -60,10 +68,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="createButton" min="-2" pref="189" max="-2" attributes="0"/>
                       <EmptySpace pref="365" max="32767" attributes="0"/>
                       <Component id="viewButton" min="-2" pref="189" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+=======
+                      <Component id="createButton" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace pref="337" max="32767" attributes="0"/>
+                      <Component id="viewButton" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+>>>>>>> parent of 095a335 (tidying)
                   </Group>
               </Group>
             </DimensionLayout>
@@ -75,7 +90,11 @@
                           <Component id="createButton" alignment="3" pref="40" max="32767" attributes="0"/>
                           <Component id="viewButton" alignment="3" pref="40" max="32767" attributes="0"/>
                       </Group>
+<<<<<<< HEAD
                       <EmptySpace pref="37" max="32767" attributes="0"/>
+=======
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
+>>>>>>> parent of 095a335 (tidying)
                   </Group>
               </Group>
             </DimensionLayout>
@@ -100,6 +119,14 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="bottomPanel">
+<<<<<<< HEAD
+=======
+          <Properties>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[735, 630]"/>
+            </Property>
+          </Properties>
+>>>>>>> parent of 095a335 (tidying)
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
               <JSplitPaneConstraints position="right"/>

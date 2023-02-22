@@ -13,7 +13,6 @@ import static java.awt.image.ImageObserver.HEIGHT;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -43,11 +42,17 @@ public class CreatePanel extends javax.swing.JPanel {
         autoIdLabel.setText(String.valueOf(fUser.getIdCounter()));
         this.aPanel = aPanel;
         this.allUsers = allUsers;
+<<<<<<< HEAD
         this.mainFrame = aFrame;
 
         //get default photo
         File f = new File(".");
         String path = f.getAbsolutePath() + "\\placeholder.png";
+=======
+        this.mainFrame = mainFrame;
+        clearFields();
+        String path = "C:\\Users\\adeda\\OneDrive\\Desktop\\placeholder2.png";
+>>>>>>> parent of 095a335 (tidying)
         BufferedImage image = null;
         try {
             image = ImageIO.read(new File(path));
@@ -100,12 +105,18 @@ public class CreatePanel extends javax.swing.JPanel {
         dayField.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         dayField.setForeground(new java.awt.Color(153, 153, 153));
         dayField.setText("DD");
+<<<<<<< HEAD
         dayField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 dayFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 dayFieldFocusLost(evt);
+=======
+        dayField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dayFieldMouseClicked(evt);
+>>>>>>> parent of 095a335 (tidying)
             }
         });
         dayField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -119,12 +130,23 @@ public class CreatePanel extends javax.swing.JPanel {
         monthField.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         monthField.setForeground(new java.awt.Color(153, 153, 153));
         monthField.setText("MM");
+<<<<<<< HEAD
         monthField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 monthFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 monthFieldFocusLost(evt);
+=======
+        monthField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                monthFieldMouseClicked(evt);
+            }
+        });
+        monthField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monthFieldActionPerformed(evt);
+>>>>>>> parent of 095a335 (tidying)
             }
         });
         monthField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -138,12 +160,26 @@ public class CreatePanel extends javax.swing.JPanel {
         yearField.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         yearField.setForeground(new java.awt.Color(153, 153, 153));
         yearField.setText("YYYY"); // NOI18N
+<<<<<<< HEAD
         yearField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 yearFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 yearFieldFocusLost(evt);
+=======
+        yearField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                yearFieldMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                yearFieldMouseExited(evt);
+            }
+        });
+        yearField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yearFieldActionPerformed(evt);
+>>>>>>> parent of 095a335 (tidying)
             }
         });
         yearField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -152,6 +188,7 @@ public class CreatePanel extends javax.swing.JPanel {
             }
         });
 
+<<<<<<< HEAD
         cellNumField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 cellNumFieldFocusLost(evt);
@@ -171,6 +208,8 @@ public class CreatePanel extends javax.swing.JPanel {
 
         emailLabel.setText("Email address");
 
+=======
+>>>>>>> parent of 095a335 (tidying)
         levelBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Junior", "Senior" }));
 
         nameLabel.setText("Name");
@@ -328,17 +367,25 @@ public class CreatePanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(emailLabel)
+<<<<<<< HEAD
                             .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
+=======
+                            .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(68, 68, 68)
+                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(182, Short.MAX_VALUE))
+>>>>>>> parent of 095a335 (tidying)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void dayFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dayFieldFocusGained
         // TODO add your handling code here:
+<<<<<<< HEAD
         if (dayField.getText().equals("DD")) {
             dayField.setText("");
         }
@@ -366,10 +413,63 @@ public class CreatePanel extends javax.swing.JPanel {
             } else {
                 dayField.setEditable(true);
             }
+=======
+        try {
+            User inputUser = new User();
+            String date = yearField.getText() + "-" + monthField.getText() + "-" + dayField.getText();
+            inputUser.setName(nameField.getText());
+//            inputUser.setId(idField.getText());
+            inputUser.setEmpId();
+//            inputUser.setAge(ageField.getText());
+            inputUser.setdt(LocalDate.parse(date));
+            inputUser.setGender(String.valueOf(genderBox.getSelectedItem()));
+//            inputUser.setDate(dateField.getText());
+            inputUser.setLevel(String.valueOf(levelBox.getSelectedItem()));
+            inputUser.setCellNum(cellNumField.getText());
+            inputUser.setEmail(emailField.getText());
+            inputUser.setPhoto(photoLabel.getIcon());
+            allUsers.addUser(inputUser);
+            JOptionPane.showMessageDialog(aPanel, "User saved successfully.", "Success", HEIGHT);
+            inputUser.setId();
+            clearFields();
+//            System.out.println(allUsers);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(aPanel, "Please provide complete and correct employee details.", "Error", HEIGHT);
+        }
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void photoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_photoButtonActionPerformed
+        // TODO add your handling code here:
+
+        FileDialog dialog = new FileDialog(mainFrame, "Select Photo", FileDialog.LOAD);
+        dialog.setVisible(true);
+        // Save file's path
+        String filePath = (dialog.getDirectory() + dialog.getFile());
+
+        // create image object
+        BufferedImage image = null;
+
+        try {
+            image = ImageIO.read(new File(filePath));
+        } catch (IOException error) {
+>>>>>>> parent of 095a335 (tidying)
         }
     }//GEN-LAST:event_dayFieldKeyPressed
 
+<<<<<<< HEAD
     private void monthFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_monthFieldFocusGained
+=======
+        // Set image dimension to be equal to dimension of label it will fit in
+        Image scaledImage = image.getScaledInstance(photoLabel.getWidth(),
+                photoLabel.getHeight(), Image.SCALE_SMOOTH);
+
+        // Make image an ImageIcon object for JLabel to accept it
+        ImageIcon imageIcon = new ImageIcon(scaledImage);
+        photoLabel.setIcon(imageIcon);
+    }//GEN-LAST:event_photoButtonActionPerformed
+
+    private void yearFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearFieldActionPerformed
+>>>>>>> parent of 095a335 (tidying)
         // TODO add your handling code here:
         if (monthField.getText().equals("MM")) {
             monthField.setText("");
@@ -383,10 +483,40 @@ public class CreatePanel extends javax.swing.JPanel {
         }
         errorLabel.setText("");
 
+<<<<<<< HEAD
     }//GEN-LAST:event_monthFieldFocusLost
 
     private void monthFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_monthFieldKeyPressed
+=======
+    private void yearFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_yearFieldMouseClicked
         // TODO add your handling code here:
+        if (yearField.getText().equals("YYYY")) {
+            yearField.setText("");
+        }
+    }//GEN-LAST:event_yearFieldMouseClicked
+
+    private void yearFieldMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_yearFieldMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yearFieldMouseExited
+
+    private void monthFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_monthFieldMouseClicked
+        // TODO add your handling code here:
+        if (monthField.getText().equals("MM")) {
+            monthField.setText("");
+        }
+    }//GEN-LAST:event_monthFieldMouseClicked
+
+    private void dayFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dayFieldMouseClicked
+        // TODO add your handling code here:
+        if (dayField.getText().equals("DD")) {
+            dayField.setText("");
+        }
+    }//GEN-LAST:event_dayFieldMouseClicked
+
+    private void nameFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameFieldKeyPressed
+>>>>>>> parent of 095a335 (tidying)
+        // TODO add your handling code here:
+
         char c = evt.getKeyChar();
         if (monthField.getText().length() == 2 && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
             monthField.setEditable(false);
@@ -430,6 +560,7 @@ public class CreatePanel extends javax.swing.JPanel {
             } else {
                 yearField.setEditable(true);
             }
+
         }
     }//GEN-LAST:event_yearFieldKeyPressed
 
@@ -456,7 +587,17 @@ public class CreatePanel extends javax.swing.JPanel {
             nameField.setEditable(false);
             errorLabel.setText("Please enter letters only.");
         } else {
+<<<<<<< HEAD
             nameField.setEditable(true);
+=======
+            if ((!Character.isDigit(c)) && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+                monthField.setEditable(false);
+                errorLabel.setText("Please enter numbers only.");
+            } else {
+                monthField.setEditable(true);
+            }
+
+>>>>>>> parent of 095a335 (tidying)
         }
     }//GEN-LAST:event_nameFieldKeyPressed
 
@@ -515,10 +656,21 @@ public class CreatePanel extends javax.swing.JPanel {
             ageField.setEditable(false);
             errorLabel.setText("Please enter numbers only.");
         } else {
+<<<<<<< HEAD
             ageField.setEditable(true);
+=======
+            if ((!Character.isDigit(c)) && (c != VK_BACK_SPACE) && (c != VK_DELETE)) {
+                dayField.setEditable(false);
+                errorLabel.setText("Please enter numbers only.");
+            } else {
+                dayField.setEditable(true);
+            }
+
+>>>>>>> parent of 095a335 (tidying)
         }
     }//GEN-LAST:event_ageFieldKeyPressed
 
+<<<<<<< HEAD
     private void nameFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFieldFocusLost
         // TODO add your handling code here:
         errorLabel.setText("");
@@ -542,6 +694,8 @@ public class CreatePanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_emailFieldFocusLost
 
+=======
+>>>>>>> parent of 095a335 (tidying)
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageField;
@@ -569,6 +723,7 @@ public class CreatePanel extends javax.swing.JPanel {
     private javax.swing.JTextField yearField;
     // End of variables declaration//GEN-END:variables
 
+<<<<<<< HEAD
     private boolean validateSave() {
         boolean b = false;
         String date = yearField.getText() + "-" + monthField.getText() + "-" + dayField.getText();
@@ -596,6 +751,19 @@ public class CreatePanel extends javax.swing.JPanel {
             yearField.requestFocus();
         }
         return b;
+=======
+    private void clearFields() {
+        nameField.setText("");
+//        idField.setText("");
+        autoLabel.setText(String.valueOf(fUser.getId()));
+        ageField.setText("");
+//        dateField.setText("");
+//        levelField.setText("");
+        cellNumField.setText("");
+        emailField.setText("");
+        photoLabel.setIcon(imageIcon);
+
+>>>>>>> parent of 095a335 (tidying)
     }
 
     private void clearFields() {
