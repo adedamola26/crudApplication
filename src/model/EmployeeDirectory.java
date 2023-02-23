@@ -12,24 +12,24 @@ import java.util.ArrayList;
  */
 public class EmployeeDirectory {
     
-    private ArrayList<User> allUsers;
+    private ArrayList<Employee> allUsers;
 
     public EmployeeDirectory() {
         this.allUsers = new ArrayList<>();
     }
 
-    public ArrayList<User> getAllUsers() {
+    public ArrayList<Employee> getAllUsers() {
         return allUsers;
     }
 
-    public void setAllUsers(ArrayList<User> allUsers) {
+    public void setAllUsers(ArrayList<Employee> allUsers) {
         this.allUsers = allUsers;
     }
     
-    public void addUser(User aUser){
+    public void addUser(Employee aUser){
         this.allUsers.add(aUser);
     }
-    public void removeUser(User aUser){
+    public void removeUser(Employee aUser){
         this.allUsers.remove(aUser);
     }
 

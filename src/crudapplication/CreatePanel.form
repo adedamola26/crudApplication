@@ -143,15 +143,11 @@
                       </Group>
                   </Group>
               </Group>
-<<<<<<< HEAD
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="errorLabel" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace pref="35" max="32767" attributes="0"/>
               <Component id="saveButton" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-=======
-              <EmptySpace pref="182" max="32767" attributes="0"/>
->>>>>>> parent of 095a335 (tidying)
           </Group>
       </Group>
     </DimensionLayout>
@@ -186,12 +182,8 @@
         <Property name="text" type="java.lang.String" value="DD"/>
       </Properties>
       <Events>
-<<<<<<< HEAD
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="dayFieldFocusGained"/>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="dayFieldFocusLost"/>
-=======
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dayFieldMouseClicked"/>
->>>>>>> parent of 095a335 (tidying)
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="dayFieldKeyPressed"/>
       </Events>
     </Component>
@@ -211,13 +203,8 @@
         <Property name="text" type="java.lang.String" value="MM"/>
       </Properties>
       <Events>
-<<<<<<< HEAD
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="monthFieldFocusGained"/>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="monthFieldFocusLost"/>
-=======
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="monthFieldMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="monthFieldActionPerformed"/>
->>>>>>> parent of 095a335 (tidying)
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="monthFieldKeyPressed"/>
       </Events>
     </Component>
@@ -237,14 +224,8 @@
         <Property name="text" type="java.lang.String" value="YYYY" noResource="true"/>
       </Properties>
       <Events>
-<<<<<<< HEAD
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="yearFieldFocusGained"/>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="yearFieldFocusLost"/>
-=======
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="yearFieldMouseClicked"/>
-        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="yearFieldMouseExited"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yearFieldActionPerformed"/>
->>>>>>> parent of 095a335 (tidying)
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="yearFieldKeyPressed"/>
       </Events>
     </Component>
@@ -255,6 +236,11 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="errorLabel">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="titleLabel">
       <Properties>

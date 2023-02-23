@@ -17,7 +17,6 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-<<<<<<< HEAD
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -41,51 +40,16 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-=======
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="281" max="-2" attributes="0"/>
-                      <Component id="titleLabel" min="-2" pref="125" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="698" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-                      <Component id="viewButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="searchField" min="-2" pref="117" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="updateButton" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
->>>>>>> parent of 095a335 (tidying)
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="nameLabel" min="-2" pref="123" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Component id="nameField" min="-2" pref="154" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-<<<<<<< HEAD
-=======
-                              <Component id="cellNumLabel" min="-2" pref="123" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                              <Component id="cellNumField" min="-2" pref="154" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
->>>>>>> parent of 095a335 (tidying)
                               <Component id="emailLabel" min="-2" pref="123" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Component id="emailField" min="-2" pref="154" max="-2" attributes="0"/>
                           </Group>
-<<<<<<< HEAD
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="ageLabel" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
@@ -105,38 +69,16 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="dayField" min="-2" pref="35" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-=======
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="idLabel" min="-2" pref="123" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="autoLabel" min="-2" pref="154" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="ageLabel" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
-                                      <Component id="genderLabel" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="57" pref="57" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="genderBox" min="-2" max="-2" attributes="0"/>
-                                      <Component id="ageField" min="-2" pref="154" max="-2" attributes="0"/>
->>>>>>> parent of 095a335 (tidying)
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
                                   <Component id="cellNumLabel" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
-=======
-                                  <Component id="dateLabel" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
->>>>>>> parent of 095a335 (tidying)
                                   <Component id="levelLabel" alignment="1" min="-2" pref="123" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="57" pref="57" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
                                   <Component id="levelBox" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="cellNumField" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
                               </Group>
@@ -158,93 +100,32 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-=======
-                                  <Component id="levelBox" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dateField" min="-2" pref="154" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="photoLabel" min="-2" pref="244" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="photoButton" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="deleteButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
->>>>>>> parent of 095a335 (tidying)
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
               <Component id="titleLabel" min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="111" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-=======
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="titleLabel" min="-2" pref="26" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="111" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
->>>>>>> parent of 095a335 (tidying)
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="deleteButton" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="viewButton" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="searchField" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
-<<<<<<< HEAD
                       <EmptySpace pref="40" max="32767" attributes="0"/>
-=======
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="searchField" min="-2" pref="34" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
->>>>>>> parent of 095a335 (tidying)
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="nameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="nameField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-<<<<<<< HEAD
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="idLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="autoIdLabel" alignment="0" min="-2" pref="16" max="-2" attributes="0"/>
-=======
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="autoLabel" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="idLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
->>>>>>> parent of 095a335 (tidying)
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -252,7 +133,6 @@
                           <Component id="ageField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-<<<<<<< HEAD
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="genderLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -266,16 +146,6 @@
                           <Component id="monthField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="yearField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="dayField" alignment="3" min="-2" max="-2" attributes="0"/>
-=======
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="genderLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="genderBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="dateField" alignment="3" min="-2" max="-2" attributes="0"/>
->>>>>>> parent of 095a335 (tidying)
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -303,12 +173,6 @@
                       <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
               </Group>
-<<<<<<< HEAD
-=======
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="updateButton" min="-2" pref="34" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
->>>>>>> parent of 095a335 (tidying)
           </Group>
       </Group>
     </DimensionLayout>
@@ -397,80 +261,10 @@
     </Container>
     <Component class="javax.swing.JButton" name="viewButton">
       <Properties>
-<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="VIEW"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewButtonActionPerformed"/>
-=======
-        <Property name="text" type="java.lang.String" value="Age"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="emailField">
-    </Component>
-    <Component class="javax.swing.JTextField" name="ageField">
-    </Component>
-    <Component class="javax.swing.JLabel" name="photoLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="PHoto"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="genderLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Gender"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="dateField">
-    </Component>
-    <Component class="javax.swing.JLabel" name="dateLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Start Date"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="photoButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Change Photo"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="photoButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="nameLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Name"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="levelLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Level"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="nameField">
-    </Component>
-    <Component class="javax.swing.JLabel" name="cellNumLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cell Phone Number"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="cellNumField">
-    </Component>
-    <Component class="javax.swing.JLabel" name="idLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Employee ID"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="emailLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Email address"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="updateButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="UPDATE"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateButtonActionPerformed"/>
->>>>>>> parent of 095a335 (tidying)
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="deleteButton">
@@ -498,7 +292,6 @@
         <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="searchFieldKeyPressed"/>
       </Events>
     </Component>
-<<<<<<< HEAD
     <Component class="javax.swing.JTextField" name="ageField">
       <Events>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ageFieldFocusLost"/>
@@ -514,9 +307,6 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="2"/>
       </Properties>
-=======
-    <Component class="javax.swing.JLabel" name="autoLabel">
->>>>>>> parent of 095a335 (tidying)
     </Component>
     <Component class="javax.swing.JComboBox" name="genderBox">
       <Properties>
@@ -544,7 +334,6 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-<<<<<<< HEAD
     <Component class="javax.swing.JLabel" name="genderLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gender"/>
@@ -671,11 +460,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="photoButtonActionPerformed"/>
-=======
-    <Component class="javax.swing.JTextField" name="searchField">
-      <Events>
-        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="searchFieldKeyPressed"/>
->>>>>>> parent of 095a335 (tidying)
       </Events>
     </Component>
   </SubComponents>
