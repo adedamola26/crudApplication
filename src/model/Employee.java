@@ -4,7 +4,7 @@
  */
 package model;
 
-import java.time.LocalDate;
+import java.util.Date;
 import javax.swing.Icon;
 
 /**
@@ -14,7 +14,7 @@ import javax.swing.Icon;
 public class Employee {
     
     private String name;
-    private LocalDate startDate;
+    private Date startDate;
     private static int idCounter = 1;
     private int empId;
     private int age;
@@ -31,11 +31,11 @@ public class Employee {
         this.name = name;
     }
 
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
