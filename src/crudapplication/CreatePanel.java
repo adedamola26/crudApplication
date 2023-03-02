@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -391,7 +393,16 @@ public class CreatePanel extends javax.swing.JPanel {
 
     private void emailFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFieldFocusLost
         // TODO add your handling code here:
-        errorLabel.setText("");
+        String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailField.getText());
+
+        if (matcher.matches() == false) {
+            errorLabel.setText("Please enter a valid email address");
+        } else {
+            errorLabel.setText("");
+        }
+
 
     }//GEN-LAST:event_emailFieldFocusLost
 
@@ -426,6 +437,10 @@ public class CreatePanel extends javax.swing.JPanel {
             DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
             String dt = fmt.format(dateChooser.getDate());
 
+            String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(emailField.getText());
+
             if (nameField.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(aPanel, "Please enter employee's name", "Error", HEIGHT);
                 nameField.requestFocus();
@@ -435,8 +450,8 @@ public class CreatePanel extends javax.swing.JPanel {
             } else if (cellNumField.getText().length() != 10) {
                 JOptionPane.showMessageDialog(aPanel, "Please enter a ten digit phone number.", "Error", HEIGHT);
                 cellNumField.requestFocus();
-            } else if (emailField.getText().trim().equals("")) {
-                JOptionPane.showMessageDialog(aPanel, "Please enter employee email", "Error", HEIGHT);
+            } else if (matcher.matches() == false) {
+                JOptionPane.showMessageDialog(aPanel, "Please enter a valid email address", "Error", HEIGHT);
                 emailField.requestFocus();
             } else if (photoLabel.getIcon() == defaultIcon) {
                 JOptionPane.showMessageDialog(aPanel, "Please upload employee photo", "Error", HEIGHT);
